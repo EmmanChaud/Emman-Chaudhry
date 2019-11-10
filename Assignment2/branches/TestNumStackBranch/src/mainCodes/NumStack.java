@@ -5,8 +5,8 @@ public class NumStack {
 	public void push(float f) {		
 	}
 
-	public Object isEmpty() {
-		return null;
+	public Boolean isEmpty() {
+		return false;
 	}
 
 }

@@ -1,8 +1,13 @@
 package testCode;
 
+
+import static org.junit.Assert.assertFalse;
+
+import org.junit.Test;
+
 import mainCodes.NumStack;
 
-class TestNumStack {
+public class TestNumStack {
 
 	@Test
 	public void testPush() {
