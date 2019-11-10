@@ -1,14 +1,14 @@
 package testCode;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.Test;
+import mainCodes.NumStack;
 
 class TestNumStack {
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	public void testPush() {
+		NumStack tester = new NumStack();
+		tester.push(1f);
+		assertFalse(tester.isEmpty());
 	}
 
 }
