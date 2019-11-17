@@ -1,15 +1,18 @@
 package mainCodes;
 
-import java.util.Stack;
+import mainCode.BadTypeException;
+import mainCode.EmptyStackException;
+import mainCode.Entry;
+import mainCode.Stack;
 
 public class NumStack {
 	
-	public Stack<Float> numStack = new Stack(); 
-	
+	Stack numStack = new Stack(); 
+	Entry entry = new Entry();
 	private float size = 0;
 
 	public void push(float f) {	
-		numStack.push(1f);
+		numStack.push(new Entry(1f));
 		size += 1;
 	}
 
@@ -17,8 +20,12 @@ public class NumStack {
 		return numStack.isEmpty();
 	}
 
-	public float pop() {
-		return numStack.pop();
+	public float pop() throws BadTypeException, EmptyStackException {
+		if (!isEmpty()) {
+			size --;
+			return numStack.pop().getValue();
+		}
+		throw new EmptyStackException();
 	}
 
 	public float size() {

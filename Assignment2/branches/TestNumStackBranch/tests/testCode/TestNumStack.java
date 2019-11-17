@@ -6,12 +6,15 @@ import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 
-import mainCode.Entry;
-import mainCode.Stack;
+import mainCode.BadTypeException;
+import mainCode.EmptyStackException;
 import mainCodes.NumStack;
 
 public class TestNumStack {
 
+	/**
+	 * TEST1: testing to push a float onto the Stack numStack 
+	 */
 	@Test
 	public void testPush() {
 		NumStack tester = new NumStack();
@@ -19,13 +22,19 @@ public class TestNumStack {
 		assertFalse(tester.isEmpty());
 	}
 	
+	/**
+	 * TEST2: test to remove an element from the Stack numStack
+	 * @throws EmptyStackException
+	 * @throws BadTypeException
+	 */
 	@Test
-	public void testPop() {
-		NumStack tested = new NumStack();
-		tested.push(1f);
-		tested.push(2f);
-		tested.pop(); 
-		assertEquals(2f, tested.size(), 0);
+	public void testPop() throws EmptyStackException, BadTypeException {
+		NumStack tester = new NumStack();
+		tester.push(1f);
+		tester.push(2f);
+		tester.push(3f);
+		tester.pop();
+		assertEquals(2f, tester.size(), 0);
 		}
 	
 
