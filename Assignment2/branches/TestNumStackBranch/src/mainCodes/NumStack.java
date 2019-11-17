@@ -1,12 +1,28 @@
 package mainCodes;
 
-public class NumStack {
+import java.util.Stack;
 
-	public void push(float f) {		
+public class NumStack {
+	
+	public Stack<Float> numStack = new Stack(); 
+	
+	private float size = 0;
+
+	public void push(float f) {	
+		numStack.push(1f);
+		size += 1;
 	}
 
 	public Boolean isEmpty() {
-		return false;
+		return numStack.isEmpty();
+	}
+
+	public float pop() {
+		return numStack.pop();
+	}
+
+	public float size() {
+		return size;
 	}
 
 }
