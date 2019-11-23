@@ -26,7 +26,7 @@ public class TestOpStack {
 	}
 	
 	/**
-	 * TEST2: test to remove an element from the Stack numStack
+	 * TEST2: test to remove an element from the Stack opStack
 	 * @throws EmptyStackException
 	 * @throws BadTypeException
 	 */
