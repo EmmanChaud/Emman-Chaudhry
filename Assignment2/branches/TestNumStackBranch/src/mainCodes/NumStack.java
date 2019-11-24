@@ -12,7 +12,7 @@ public class NumStack {
 	private float size = 0;
 
 	public void push(float f) {	
-		numStack.push(new Entry(1f));
+		numStack.push(new Entry(f));
 		size += 1;
 	}
 
