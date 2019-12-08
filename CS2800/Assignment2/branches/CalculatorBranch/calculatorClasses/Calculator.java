@@ -1,4 +1,4 @@
-package mainCodes;
+package calculatorClasses;
 
 public interface Calculator {
 

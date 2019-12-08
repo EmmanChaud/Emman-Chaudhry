@@ -1,7 +1,8 @@
-package mainCodes;
+package calculatorClasses;
 
 import mainCode.BadTypeException;
 import mainCode.EmptyStackException;
+import mainCodes.NumStack;
 
 public class RevPolishCalc {
 
