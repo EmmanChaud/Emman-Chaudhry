@@ -1,15 +1,18 @@
 package mainCodes;
 
-public class Add {
-
-	public void add(int i, int j) {
-		// TODO Auto-generated method stub
-		
+public class Add implements Calculator{
+	
+	public Calculator leftExpression; 
+	public Calculator rightExpression; 
+	
+	public Add(Calculator leftExpression, Calculator rightExpression) {
+		this.leftExpression = leftExpression;
+		this.rightExpression = rightExpression;
 	}
 
-	public boolean evaluate() {
-		// TODO Auto-generated method stub
-		return false;
+	@Override
+	public float evaluate() {
+		return leftExpression.evaluate() + rightExpression.evaluate(); 
 	}
 
 }
