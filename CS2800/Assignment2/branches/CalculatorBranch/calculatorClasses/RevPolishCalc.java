@@ -9,7 +9,7 @@ public class RevPolishCalc {
   NumStack values = new NumStack();
 
   public float evalExpression(String expression) throws BadTypeException, EmptyStackException {
-    String[] expressionArray = expression.split(" ");
+    String[] expressionArray = expression.split("");
     for (String s : expressionArray) {
       if (Operator.isOperator(s)) {
         Calculator rightExpression = new NumberExp(values.pop());

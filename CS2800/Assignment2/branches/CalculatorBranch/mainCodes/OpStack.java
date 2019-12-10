@@ -38,4 +38,11 @@ public class OpStack {
 		return opStack.pop().getSymbol();
 	}
 
+  public String peek() throws EmptyStackException, BadTypeException {
+    if (!isEmpty()) {
+      return opStack.pop().getSymbol().getSymbol();
+  }
+  throw new EmptyStackException();
+  }
+	
 }
