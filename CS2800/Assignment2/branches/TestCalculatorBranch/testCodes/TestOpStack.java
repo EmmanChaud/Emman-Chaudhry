@@ -35,5 +35,13 @@ public class TestOpStack {
 		tester.pop();
 		assertEquals(Symbol.LEFT_BRACKET, tester.getSymbol());
 		}
-
+	
+	@Test
+	public void testPushThenPeak() throws EmptyStackException, BadTypeException {
+	  OpStack tester = new OpStack();
+	  tester.push(Symbol.DIVIDE);
+	  float size = tester.size();
+	  assertEquals(tester.peek(), "/");
+	  
+	}
 }

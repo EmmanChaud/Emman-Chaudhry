@@ -4,14 +4,13 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
-
-import mainCodes.Add;
-import mainCodes.Calculator;
-import mainCodes.Divide;
-import mainCodes.NumberExp;
-import mainCodes.Operator;
-import mainCodes.Subtract;
-import mainCodes.Times;
+import calculatorClasses.Add;
+import calculatorClasses.Calculator;
+import calculatorClasses.Divide;
+import calculatorClasses.NumberExp;
+import calculatorClasses.Operator;
+import calculatorClasses.Subtract;
+import calculatorClasses.Times;
 
 class TestOperator {
 
