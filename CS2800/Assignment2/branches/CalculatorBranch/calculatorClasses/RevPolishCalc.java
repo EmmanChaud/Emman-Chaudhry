@@ -4,24 +4,28 @@ import mainCode.BadTypeException;
 import mainCode.EmptyStackException;
 import mainCodes.NumStack;
 
-public class RevPolishCalc {
+public class RevPolishCalc implements Calculator{
 
-  NumStack values = new NumStack();
 
-  public float evalExpression(String expression) throws BadTypeException, EmptyStackException {
-    String[] expressionArray = expression.split("");
+  @Override  
+  public float evaluate(String expression) throws BadTypeException, EmptyStackException {
+    NumStack values = new NumStack();
+    String[] expressionArray = expression.split(" ");
     for (String s : expressionArray) {
       if (Operator.isOperator(s)) {
-        Calculator rightExpression = new NumberExp(values.pop());
-        Calculator leftExpression = new NumberExp(values.pop());
-        Calculator operator = Operator.getOperator(s, leftExpression, rightExpression);
+        Expression rightExpression = new NumberExp(values.pop());
+        Expression leftExpression = new NumberExp(values.pop());
+        Expression operator = Operator.getOperator(s, leftExpression, rightExpression);
         float result = operator.evaluate();
         values.push(result);
       } else {
-        Calculator i = new NumberExp(Float.parseFloat(s));
+        Expression i = new NumberExp(Float.parseFloat(s));
         values.push(i.evaluate());
       }
     } 
     return values.pop();
   }
-}
+
+
+  }
+  

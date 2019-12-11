@@ -1,11 +1,11 @@
 package calculatorClasses;
 
-public class Add implements Calculator{
+public class Add implements Expression{
 	
-	public Calculator leftExpression; 
-	public Calculator rightExpression; 
+	public Expression leftExpression; 
+	public Expression rightExpression; 
 	
-	public Add(Calculator leftExpression, Calculator rightExpression) {
+	public Add(Expression leftExpression, Expression rightExpression) {
 		this.leftExpression = leftExpression;
 		this.rightExpression = rightExpression;
 	}

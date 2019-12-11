@@ -1,16 +1,71 @@
 package calculatorClasses;
 
+import java.util.ArrayList;
+import java.util.List;
 import mainCode.BadTypeException;
 import mainCode.EmptyStackException;
 import mainCode.Symbol;
 import mainCodes.OpStack;
 
-public class StandardCalc {
+public class StandardCalc implements Calculator {
 
+  @Override
+  public float evaluate(String exp) throws BadTypeException, EmptyStackException {
+    
+    
+    List<String> result = new ArrayList<String>();
+    OpStack opStack = new OpStack();
+    String[] stringArray = exp.split(" ");
+    
+    
+    for (String s : stringArray) {
+      
+      
+      if (!Operator.isOperator(s) && !Operator.isBracket(s)) {
+        result.add(s);
+      }
+      
+      
+      else if (Operator.isOperator(s)) {
+        while (!opStack.isEmpty() && getPriority(s) <= getPriority(opStack.peek().toString())) {
+          result.add(opStack.pop().getSymbol());
+        }
+        opStack.push(Operator.getOpSymbol(s));
+      }
+      
+      
+      if (s.equals("(")) {
+        opStack.push(Symbol.LEFT_BRACKET);
+      }
+      
+      
+      else if (s.equals(")")) {
+        while (!opStack.isEmpty()) {
+          if (opStack.peek() != Symbol.LEFT_BRACKET) {
+            result.add(opStack.pop().getSymbol());
+          } else {
+            opStack.pop();
+          }
+        }
+      }
+      
+    }    
+    
+    
+    while (!opStack.isEmpty()){
+      result.add(opStack.pop().getSymbol());
+    }
+    
+    
+    String finalResult = String.join(" ", result);
+    RevPolishCalc converter = new RevPolishCalc();
+    return converter.evaluate(finalResult);
+  }
+  
   static int getPriority(String s) {
     switch (s) {
       case "(":
-        return 1;
+        return 5;
       case "+":
       case "-":
         return 2;
@@ -20,52 +75,6 @@ public class StandardCalc {
     }
     return 0;
   }
-
-  public static String infixToPostfix(String exp) throws EmptyStackException, BadTypeException {
-
-    String result = new String("");
-    OpStack opStack = new OpStack();
-    String[] stringArray = exp.split("");
-
-    for (String s : stringArray) {
-
-      if (!Operator.isOperator(s)) {
-        result += s;
-      }
-
-      else if (Operator.isOperator(s)) {
-        while(!opStack.isEmpty() && getPriority(s) <= getPriority(opStack.peek())) {
-           result += opStack.pop().getSymbol();
-        }
-        opStack.push(Operator.getOpSymbol(s));
-      }
-
-      if (s == "(") {
-        opStack.push(Symbol.LEFT_BRACKET);
-      }
-
-      if (s == ")") {
-        while (!opStack.isEmpty() && opStack.peek() != Symbol.LEFT_BRACKET.getSymbol()) {
-          result += opStack.pop().getSymbol();
-        }
-        opStack.pop();
-      }
-    }
-
-    while (!opStack.isEmpty()) {
-      result += opStack.pop().getSymbol();
-    }
-
-    return result;
-  }
-
-
-  // public float evalExpression(String a) throws BadTypeException, EmptyStackException {
-  // String expression = infixToPostfix(a);
-  // RevPolishCalc result = new RevPolishCalc();
-  // return result.evalExpression(expression);
-  // }
-
 
 }
 

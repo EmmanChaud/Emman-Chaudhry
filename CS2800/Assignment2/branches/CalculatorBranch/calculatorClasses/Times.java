@@ -1,12 +1,12 @@
 package calculatorClasses;
 
-public class Times implements Calculator {
+public class Times implements Expression {
 
 	
-	public Calculator leftExpression; 
-	public Calculator rightExpression; 
+	public Expression leftExpression; 
+	public Expression rightExpression; 
 	
-	public Times(Calculator leftExpression, Calculator rightExpression) {
+	public Times(Expression leftExpression, Expression rightExpression) {
 		this.leftExpression = leftExpression;
 		this.rightExpression = rightExpression;
 	}

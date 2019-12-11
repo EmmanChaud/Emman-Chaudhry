@@ -1,6 +1,6 @@
 package calculatorClasses;
 
-public class NumberExp implements Calculator {
+public class NumberExp implements Expression {
 
 	private final float f; 
 	

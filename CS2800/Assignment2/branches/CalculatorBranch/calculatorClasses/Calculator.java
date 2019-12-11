@@ -1,7 +1,10 @@
 package calculatorClasses;
 
-public interface Calculator {
+import mainCode.BadTypeException;
+import mainCode.EmptyStackException;
 
-	public float evaluate();
+public interface Calculator {
+  
+  public float evaluate(String what) throws BadTypeException, EmptyStackException;
 
 }

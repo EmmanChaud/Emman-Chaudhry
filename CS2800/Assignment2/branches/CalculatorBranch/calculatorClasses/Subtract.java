@@ -1,12 +1,12 @@
 package calculatorClasses;
 
-public class Subtract implements Calculator {
+public class Subtract implements Expression {
 
 	
-	public Calculator leftExpression; 
-	public Calculator rightExpression; 
+	public Expression leftExpression; 
+	public Expression rightExpression; 
 	
-	public Subtract(Calculator leftExpression, Calculator rightExpression) {
+	public Subtract(Expression leftExpression, Expression rightExpression) {
 		this.leftExpression = leftExpression;
 		this.rightExpression = rightExpression;
 	}

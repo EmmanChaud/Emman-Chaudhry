@@ -1,12 +1,12 @@
 package calculatorClasses;
 
-public class Divide implements Calculator {
+public class Divide implements Expression {
 
 	
-	public Calculator leftExpression; 
-	public Calculator rightExpression; 
+	public Expression leftExpression; 
+	public Expression rightExpression; 
 	
-	public Divide(Calculator leftExpression, Calculator rightExpression) {
+	public Divide(Expression leftExpression, Expression rightExpression) {
 		this.leftExpression = leftExpression;
 		this.rightExpression = rightExpression;
 	}

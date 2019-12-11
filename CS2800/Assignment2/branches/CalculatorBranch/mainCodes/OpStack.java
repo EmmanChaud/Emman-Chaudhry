@@ -11,9 +11,9 @@ public class OpStack {
 	Stack opStack = new Stack(); 
 	Entry entry = new Entry();
 	private float size = 0;
-	private Entry first; 
+	private Symbol first;
 	
-
+	
 	public void push(Symbol symbol) {
 		opStack.push(new Entry(symbol));
 		size += 1;		
@@ -38,7 +38,7 @@ public class OpStack {
 		return opStack.pop().getSymbol();
 	}
 
-  public String peek() throws EmptyStackException, BadTypeException {
-      return opStack.top().toString();
+  public Symbol peek() throws EmptyStackException, BadTypeException {
+      return opStack.top().getSymbol();
 }
 }
