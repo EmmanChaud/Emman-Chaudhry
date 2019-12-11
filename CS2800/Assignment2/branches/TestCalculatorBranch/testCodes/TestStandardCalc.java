@@ -17,12 +17,12 @@ class TestStandardCalc {
 		assertEquals("567+*2-", tester.infixToPostfix(a));
 	}
 	
-	@Test
-	void test2() {
-	  StandardCalc tester = new StandardCalc();
-	  String a = "(5*(6+7))-2";
-	  tester.evalExpression(a);
-	  
-	}
+//	@Test
+//	void test2() throws BadTypeException, EmptyStackException {
+//	  StandardCalc tester = new StandardCalc();
+//	  String a = "(5*(6+7))-2";
+//	  assertEquals(63.0, tester.evalExpression(a));
+//	  
+//	}
 
 }
