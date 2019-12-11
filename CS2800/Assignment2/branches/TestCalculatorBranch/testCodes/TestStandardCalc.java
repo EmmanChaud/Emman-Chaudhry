@@ -10,19 +10,20 @@ import mainCode.EmptyStackException;
 class TestStandardCalc {
 
 	@Test
-	void test() throws BadTypeException, EmptyStackException {
-		StandardCalc tester = new StandardCalc();
-		String a = "(5*(6+7))-2";
-		tester.infixToPostfix(a);
-		assertEquals("567+*2-", tester.infixToPostfix(a));
+	void test2() throws BadTypeException, EmptyStackException {
+	  StandardCalc tester = new StandardCalc();
+	  String a = "( 5 * ( 6 + 7 ) ) - 2";
+	  assertEquals(63.0, tester.evaluate(a));
 	}
+	  
+	  @Test
+	  void testSpacesBetweenCharacters() throws BadTypeException, EmptyStackException {
+	    StandardCalc tester = new StandardCalc(); 
+	    String a = "( 10 + 2 )";
+	    assertEquals(12.0,tester.evaluate(a));
+	    
+	  }
+	  
 	
-//	@Test
-//	void test2() throws BadTypeException, EmptyStackException {
-//	  StandardCalc tester = new StandardCalc();
-//	  String a = "(5*(6+7))-2";
-//	  assertEquals(63.0, tester.evalExpression(a));
-//	  
-//	}
 
 }

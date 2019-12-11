@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 import calculatorClasses.Add;
-import calculatorClasses.Calculator;
+import calculatorClasses.Expression;
 import calculatorClasses.Divide;
 import calculatorClasses.NumberExp;
 import calculatorClasses.Operator;
@@ -25,8 +25,8 @@ class TestOperator {
 	void test2() {
 		Operator tester = new Operator();
 		String operand = "+";
-		Calculator left = null;
-		Calculator right = null;
+		Expression left = null;
+		Expression right = null;
 		Add add = new Add(left,right);
 		Subtract subtract = new Subtract(left,right);
 		Times times = new Times(left, right);

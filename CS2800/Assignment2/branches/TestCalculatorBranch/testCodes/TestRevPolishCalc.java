@@ -14,8 +14,8 @@ class TestRevPolishCalc {
 	void test2() throws BadTypeException, EmptyStackException {
 		RevPolishCalc tester = new RevPolishCalc();
 		String string = "567+*2-";
-		assertEquals(63, tester.evalExpression(string));
-		System.out.println(tester.evalExpression(string)); 
+		assertEquals(63, tester.evaluate(string));
+		System.out.println(tester.evaluate(string)); 
 	}
 
 }
