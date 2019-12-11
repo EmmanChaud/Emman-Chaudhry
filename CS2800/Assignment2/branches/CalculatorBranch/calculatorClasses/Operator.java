@@ -32,17 +32,11 @@ public class Operator {
 	        case "-":
 	            return Symbol.MINUS;
 	        case "*":
-	          Symbol times = Symbol.TIMES;
 	            return Symbol.TIMES;
 	        case "/":
 	            return Symbol.DIVIDE;
-	        case "(":
-	          Symbol leftBracket = Symbol.LEFT_BRACKET;
-              return leftBracket;
-	        case ")":
-              return Symbol.RIGHT_BRACKET;
 	        }
-	        return null; 
+	  return Symbol.INVALID;
 	  }
 	
 	}
