@@ -8,6 +8,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="testCode"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/Assignment1"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/Assignment1"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
