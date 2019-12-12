@@ -1,8 +1,7 @@
 package mainCode;
 
 public enum Symbol {
-  LEFT_BRACKET("("), RIGHT_BRACKET(")"), TIMES("*"), DIVIDE("\""), PLUS("+"), MINUS("-"), INVALID(
-      "INVALID");
+  LEFT_BRACKET("("), RIGHT_BRACKET(")"), TIMES("*"), DIVIDE("\""), PLUS("+"), MINUS("-"), INVALID("@");
 
   private String symbol;
 
